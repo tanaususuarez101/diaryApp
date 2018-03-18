@@ -1,0 +1,8 @@
+{
+  "name": "diaryApp",
+  "app_id": "82e6ae9f",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
