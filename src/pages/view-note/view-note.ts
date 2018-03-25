@@ -13,7 +13,7 @@ export class ViewNotePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewNotePage');
+
   }
 
 }

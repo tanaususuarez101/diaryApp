@@ -16,8 +16,8 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.pages = [
-      { title: "Ver",     component: ViewNotePage,     icon: "bookmarks" },
-      { title: "Crear",   component: CreateNotePage,   icon: "add" }
+      { titulo: "Ver",     component: ViewNotePage,     icon: "bookmarks" },
+      { titulo: "Crear",   component: CreateNotePage,   icon: "add" }
     ];
 
 
@@ -28,9 +28,7 @@ export class MyApp {
   }
 
   goToPage(page){
-    console.log("pulsado");
     this.nav.setRoot(page);
-
   }
 }
 

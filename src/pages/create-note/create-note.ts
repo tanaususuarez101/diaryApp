@@ -19,7 +19,7 @@ export class CreateNotePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CreateNotePage');
+
   }
 
 }

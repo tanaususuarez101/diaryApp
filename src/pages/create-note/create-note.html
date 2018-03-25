@@ -16,4 +16,25 @@
 
 <ion-content padding>
 
+  <form>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating >Título</ion-label>
+        <ion-input type="text" clearInput="true" name="noteName" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>¿Qué necesitas recordar?</ion-label>
+        <ion-textarea name="noteComment" required></ion-textarea>
+      </ion-item>
+
+      <button ion-button type="submit" block full icon-left>
+        <ion-icon name="send"></ion-icon>
+        Guardar
+      </button>
+
+    </ion-list>
+  </form>
+
 </ion-content>

@@ -1,13 +1,13 @@
 <ion-menu [content]="mymenu">
   <ion-content>
     <ion-list>
+      <img src="../assets/imgs/notas.png" alt="">
       <button ion-item *ngFor="let page of pages" (click)="goToPage(page.component)" menuClose>
         <ion-icon item-left name="{{ page.icon }}"></ion-icon>
-        {{ page.title }}
+        {{ page.titulo }}
       </button>
     </ion-list>
 
   </ion-content>
 </ion-menu>
 <ion-nav #mymenu [root]="rootPage"></ion-nav>
-
