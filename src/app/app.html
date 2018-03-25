@@ -1,11 +1,13 @@
-<ion-menu [content]="menu">
+<ion-menu [content]="mymenu">
   <ion-content>
     <ion-list>
-      <button ion-item (click)="changePage(page1)" >Pages 1</button>
-      <button ion-item >Pages 2</button>
+      <button ion-item *ngFor="let page of pages" (click)="goToPage(page.component)" menuClose>
+        <ion-icon item-left name="{{ page.icon }}"></ion-icon>
+        {{ page.title }}
+      </button>
     </ion-list>
 
   </ion-content>
 </ion-menu>
-<ion-nav #menu [root]="rootPage"></ion-nav>
+<ion-nav #mymenu [root]="rootPage"></ion-nav>
 

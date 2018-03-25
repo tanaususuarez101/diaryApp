@@ -6,11 +6,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { ViewNotePage } from '../pages/view-note/view-note';
+import { CreateNotePage } from '../pages/create-note/create-note';
 
 @NgModule({
   declarations: [
     MyApp,
-    ViewNotePage
+    ViewNotePage,
+    CreateNotePage
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,8 @@ import { ViewNotePage } from '../pages/view-note/view-note';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ViewNotePage
+    ViewNotePage,
+    CreateNotePage
   ],
   providers: [
     StatusBar,
