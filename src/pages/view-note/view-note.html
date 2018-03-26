@@ -10,5 +10,13 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ng-container  *ngFor="let note of noteList">
+        <h3>{{ note.titulo }}</h3>
+        <p></p>
+      </ng-container>
+    </ion-item>
 
+  </ion-list>
 </ion-content>
