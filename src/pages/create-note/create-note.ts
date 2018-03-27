@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import { RestfulServiceProvider } from '../../providers/restful-service/restful-service';
+import { FormBuilder, Validators } from "@angular/forms";
 
-/**
- * Generated class for the CreateNotePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ViewNotePage } from '../view-note/view-note';
+
 
 @IonicPage()
 @Component({
@@ -15,11 +13,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CreateNotePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  noteForm: any;
 
+
+  constructor(public navCtrl: NavController,
+              public formBuilder: FormBuilder,
+              public rest: RestfulServiceProvider ) {
+    this.noteForm = this.createFormNote();
+  }
+  private createFormNote(){
+    return this.formBuilder.group({
+      noteName: ['', Validators.required],
+      noteComment: ['',Validators.required]
+    });
+  }
   ionViewDidLoad() {
 
   }
+  sendData(){
+    console.log(this.noteForm.value);
+    this.navCtrl.setRoot(ViewNotePage);
+  }
+
 
 }
