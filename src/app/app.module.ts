@@ -8,13 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { ViewNotePage } from '../pages/view-note/view-note';
 import { CreateNotePage } from '../pages/create-note/create-note';
+import { DetailNotePage } from '../pages/detail-note/detail-note';
+
 import { RestfulServiceProvider } from '../providers/restful-service/restful-service';
 
 @NgModule({
   declarations: [
     MyApp,
     ViewNotePage,
-    CreateNotePage
+    CreateNotePage,
+    DetailNotePage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { RestfulServiceProvider } from '../providers/restful-service/restful-ser
   entryComponents: [
     MyApp,
     ViewNotePage,
-    CreateNotePage
+    CreateNotePage,
+    DetailNotePage
   ],
   providers: [
     StatusBar,

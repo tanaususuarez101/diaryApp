@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { RestfulServiceProvider } from '../../providers/restful-service/restful-service';
 import { FormBuilder, Validators } from "@angular/forms";
 
-import { ViewNotePage } from '../view-note/view-note';
+
 
 
 @IonicPage()
@@ -15,9 +15,9 @@ export class CreateNotePage {
 
   noteForm: any;
 
-
   constructor(public navCtrl: NavController,
               public formBuilder: FormBuilder,
+              public toastCtrl: ToastController,
               public rest: RestfulServiceProvider ) {
     this.noteForm = this.createFormNote();
   }
@@ -32,7 +32,15 @@ export class CreateNotePage {
   }
   sendData(){
     console.log(this.noteForm.value);
-    this.navCtrl.setRoot(ViewNotePage);
+    this.presentToast();
+  }
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Nota añadida',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
   }
 
 

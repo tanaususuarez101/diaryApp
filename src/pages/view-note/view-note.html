@@ -13,9 +13,8 @@
 
   <ion-list>
     <ng-container *ngFor="let note of noteList">
-      <ion-item>
-          <h3>{{ note.title }}</h3>
-          <p>{{ note.coments }}</p>
+      <ion-item (click)="goDetail(note.title,note.coments)">
+            <h2 ion-text color="primary" >{{ note.title }}</h2>
       </ion-item>
     </ng-container>
   </ion-list>

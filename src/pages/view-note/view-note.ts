@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestfulServiceProvider } from '../../providers/restful-service/restful-service';
+import { DetailNotePage } from '../detail-note/detail-note';
 
 
 @IonicPage()
@@ -17,13 +18,18 @@ export class ViewNotePage {
               public rest: RestfulServiceProvider) {
   }
 
-
-
   ionViewDidLoad() {
     this.rest.getNote().subscribe( data => {
       this.noteList = data;
     });
 
   }
+  goDetail(title, noteComents) {
+    this.navCtrl.push(DetailNotePage, {
+      noteTitle: title,
+      noteComments: noteComents
+    });
+  }
+
 
 }
