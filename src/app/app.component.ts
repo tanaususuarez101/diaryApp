@@ -7,6 +7,7 @@ import { ViewNotePage } from '../pages/view-note/view-note';
 import { CreateNotePage } from '../pages/create-note/create-note';
 
 import { SQLite } from '@ionic-native/sqlite';
+import { RestfulServiceProvider } from '../providers/restful-service/restful-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,6 +20,7 @@ export class MyApp {
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
+              public restfull: RestfulServiceProvider,
               public sqlite: SQLite) {
     this.pages = [
       { titulo: "Ver",     component: ViewNotePage,     icon: "bookmarks" },
@@ -41,8 +43,12 @@ export class MyApp {
       name: 'data.db',
       location: 'default' // the location field is required
     })
-      .then((db) => {
+      .then(db => {
         console.log(db);
+      })
+      .then(db => {
+        this.restfull.setDatabase(db);
+        return this.restfull.createTable();
       })
       .catch(error =>{
         console.error(error);

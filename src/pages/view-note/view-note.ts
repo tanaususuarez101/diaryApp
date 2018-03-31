@@ -19,9 +19,6 @@ export class ViewNotePage {
   }
 
   ionViewDidLoad() {
-    this.rest.getNote().subscribe( data => {
-      this.noteList = data;
-    });
 
   }
   goDetail(title, noteComents) {
