@@ -19,7 +19,7 @@ export class MyApp {
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
-              sqlite: SQLite) {
+              public sqlite: SQLite) {
     this.pages = [
       { titulo: "Ver",     component: ViewNotePage,     icon: "bookmarks" },
       { titulo: "Crear",   component: CreateNotePage,   icon: "add" }
